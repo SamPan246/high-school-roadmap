@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High School Success Roadmap</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>High School Success Roadmap</h1>
+            <p>Create your personalized path to top universities with targeted activities, competitions, and programs</p>
+        </header>
+
+        <div class="quiz-container">
+            <h2>Let's Create Your Roadmap</h2>
+            
+            <form id="roadmapForm" novalidate>
+                <div class="form-group">
+                    <label for="grade">Current Grade: <span class="required">*</span></label>
+                    <select id="grade" required aria-required="true">
+                        <option value="">Select your grade</option>
+                        <option value="9">9th Grade</option>
+                        <option value="10">10th Grade</option>
+                        <option value="11">11th Grade</option>
+                        <option value="12">12th Grade</option>
+                    </select>
+                    <div class="error-message" id="grade-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="interests">Academic Interests: <span class="required">*</span></label>
+                    <select id="interests" multiple required aria-required="true" aria-label="Select at least one academic interest">
+                        <option value="stem">STEM</option>
+                        <option value="humanities">Humanities</option>
+                        <option value="arts">Arts</option>
+                        <option value="business">Business</option>
+                        <option value="social-sciences">Social Sciences</option>
+                    </select>
+                    <div class="error-message" id="interests-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Current Activities:</legend>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sports" name="activities" value="sports">
+                                <label for="sports">Sports</label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="music" name="activities" value="music">
+                                <label for="music">Music</label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="clubs" name="activities" value="clubs">
+                                <label for="clubs">Academic Clubs</label>
+                            </div>
+
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="volunteer" name="activities" value="volunteer">
+                                <label for="volunteer">Volunteering</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <button type="submit" class="generate-btn" aria-label="Generate roadmap">Generate My Roadmap</button>
+            </form>
+        </div>
+
+        <div id="roadmapResult" class="roadmap-result hidden" aria-live="polite">
+            <h2>Your Personalized Roadmap</h2>
+            <div id="recommendations"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
